@@ -1,27 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Cloud Website</title>
+    <title>My Cloud Website — Cloud Computing Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="card">
-        <h1>Welcome to My Cloud Website</h1>
-        <p>
-            This website was created during our
-            Cloud Computing laboratory.
-        </p>
-        <h2>Student Information</h2>
-        <p>Name: كرار عبود</p>
-        <p>Department: Biological Information</p>
-        <p>Date: 2026-11-24</p>
-        <p>Git is used for version control and tracking code changes.</p>
-        <p>Cloudflare Pages is used to deploy and host the website online.</p>
-        <p class="status">
-            Website successfully deployed to the cloud.
-        </p>
-    </div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <main class="container">
+        <div class="card">
+            <div class="top-bar">
+                <div class="status-badge">
+                    <span class="pulse-dot"></span>
+                    <span>Live on Cloud</span>
+                </div>
+                <button id="themeToggle" class="theme-btn" type="button" aria-label="Toggle theme">
+                    Switch Theme
+                </button>
+            </div>
+
+            <div class="hero">
+                <h1>Welcome to My Cloud Website</h1>
+                <p class="subtitle">
+                    This website was created during our Cloud Computing laboratory with automated deployment.
+                </p>
+            </div>
+
+            <section class="section">
+                <h2>Student Information</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="label">Name</span>
+                        <span class="value">كرار عبود</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Department</span>
+                        <span class="value">Biological Information</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Date</span>
+                        <span class="value">2026-11-24</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Deployment</span>
+                        <span class="value">Cloudflare Edge</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Cloud Workflow Notes</h2>
+                <div class="notes-box">
+                    <p><strong>Git:</strong> Git is used for version control and tracking code changes.</p>
+                    <p><strong>Cloudflare Pages:</strong> Cloudflare Pages is used to deploy and host the website online.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Tech Stack</h2>
+                <div class="tags">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">Git</span>
+                    <span class="tag">GitHub</span>
+                    <span class="tag">Cloudflare</span>
+                </div>
+            </section>
+
+            <footer class="card-footer">
+                <p class="status-text">Website successfully deployed to the cloud.</p>
+                <a href="https://github.com/kararabood-stack/my-cloud-website" target="_blank" rel="noopener noreferrer" class="repo-btn">
+                    View GitHub Repository ↗
+                </a>
+            </footer>
+        </div>
+    </main>
+
+    <script>
+        const toggleBtn = document.getElementById('themeToggle');
+        const htmlEl = document.documentElement;
+
+        toggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlEl.getAttribute('data-theme');
+            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            htmlEl.setAttribute('data-theme', nextTheme);
+        });
+    </script>
 </body>
 </html>
